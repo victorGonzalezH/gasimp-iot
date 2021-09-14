@@ -448,8 +448,12 @@ void loop() {
       Serial.println(lastMeasureRecord.dateTime);
       //Se suma la diferencia entre la medicion actual y la pasada
       float intervalInMinutes = UPDATE_INTERVAL_MIN;
+      EEPROM.get(EEPROM_ADDRESS_CONSUMPTION_PER_DAY, consumptionPerDay);
+      EEPROM.get(EEPROM_ADDRESS_SENSING_COUNTER_PER_DAY, sensingCounterPerDay);
       consumptionPerDay+=((currentMeasureRecord.weight - lastMeasureRecord.weight)/intervalInMinutes);
       sensingCounterPerDay+=1.0;
+      EEPROM.put(EEPROM_ADDRESS_CONSUMPTION_PER_DAY, consumptionPerDay);
+      EEPROM.put(EEPROM_ADDRESS_SENSING_COUNTER_PER_DAY, sensingCounterPerDay);
       if(sensingCounterPerDay != 0.0f)
       {
         averageConsumptionPerDay = consumptionPerDay/sensingCounterPerDay;
