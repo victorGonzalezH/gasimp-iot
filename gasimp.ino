@@ -15,7 +15,7 @@
 #define APPSK  "gasimp123"
 #endif
 
-|----------------|
+//|----------------|
 
 //activated            1 byte        direccion de inicio 0
 //ssid                 4 bytes       direccion de inicio 1
