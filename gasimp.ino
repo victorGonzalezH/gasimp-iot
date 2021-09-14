@@ -20,6 +20,7 @@
 //ssid                 4 bytes       direccion de inicio 1
 //password             4 bytes       direccion de inicio 5
 //hostname             4 bytes       direccion de inicio 9
+
 //direccion logging   4 bytes       direccion de inicio 13
 //total              17 bytes total
 
@@ -29,6 +30,12 @@
 #define EEPROM_ADDRESS_SSID_PASSWORD 5
 //Direccion de la eeprom donde se guarda la direccion en la que se guardo el hostname
 #define EEPROM_ADDRESS_HOSTNAME      9
+//Direccion de la eeprom donde se guarda la direccion en la que se guarda el valor de la varuiable
+// consumtionPerDay
+#define EEPROM_ADDRESS_CONSUMPTION_PER_DAY 13
+
+#define EEPROM_ADDRESS_SENSING_COUNTER_PER_DAY 21
+
 //Direccion de la eeprom donde se guarda la direccion en la que se quedo el apuntador
 // del logging de los datos historios
 #define EEPROM_ADDRESS_LOGGING_EEPROM_ADDRESS 13
