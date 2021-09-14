@@ -15,12 +15,13 @@
 #define APPSK  "gasimp123"
 #endif
 
+|----------------|
 
 //activated            1 byte        direccion de inicio 0
 //ssid                 4 bytes       direccion de inicio 1
 //password             4 bytes       direccion de inicio 5
 //hostname             4 bytes       direccion de inicio 9
-
+//
 //direccion logging   4 bytes       direccion de inicio 13
 //total              17 bytes total
 
@@ -30,23 +31,24 @@
 #define EEPROM_ADDRESS_SSID_PASSWORD 5
 //Direccion de la eeprom donde se guarda la direccion en la que se guardo el hostname
 #define EEPROM_ADDRESS_HOSTNAME      9
-//Direccion de la eeprom donde se guarda la direccion en la que se guarda el valor de la varuiable
-// consumtionPerDay
-#define EEPROM_ADDRESS_CONSUMPTION_PER_DAY 13
-
-#define EEPROM_ADDRESS_SENSING_COUNTER_PER_DAY 21
-
 //Direccion de la eeprom donde se guarda la direccion en la que se quedo el apuntador
 // del logging de los datos historios
 #define EEPROM_ADDRESS_LOGGING_EEPROM_ADDRESS 13
+
+//Aqui se guarda el valor de la variable consumption per day
+#define EEPROM_ADDRESS_CONSUMPTION_PER_DAY 17
+
+//Aqui se guarda el valor de la variable sensing counter per day
+#define EEPROM_ADDRESS_SENSING_COUNTER_PER_DAY 25
+
 
 //Indica la direccion en donde se va a empezar a escribir los datos de configuracion del dispositivo,
 //por ejemplo a partir de esta direccion se empezara a escribir el ssid del usuario. De 
 //acuerdo a la longitud de la cadena del ssid, la siguiente direccion disponible para guardar
 // el password se guarda en la variable currentEepromAddres. Se tiene contemplado un total
-// de 80 bytes para los datos de configuracion, 17 bytes para los punteros de memoria de los datos
-// y 63 bytes para escribir los datos
-#define EEPROM_CONFIG_ADDRESS_OFFSET 17
+// de 80 bytes para los datos de configuracion, 33 bytes para los punteros de memoria de los datos
+// y 47 bytes para escribir los datos
+#define EEPROM_CONFIG_ADDRESS_OFFSET 33
 #define EEPROM_LOGGING_ADDRESS_OFFSET 80
 
 // 80 bytes are for configuration data (pointers and data), from 0 to 79
